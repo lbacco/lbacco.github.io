@@ -12,20 +12,14 @@ hugoblox:
   # Site-level branding (for people/profiles, use the author system in content/authors/)
   # ────────────────────────────────────────────────────────────────────────────
   identity:
-    # Site name - shown in navbar, footer, copyright, and browser title by default
-    name: "Your Name"
-    # Legal entity for copyright notices (defaults to name if not set)
-    organization: ""
-    # Schema.org type for structured data
-    type: person # person | organization | local_business
-    # Short tagline displayed on your site
-    tagline: ""
-    # Site meta description for search engines and social sharing
-    description: "The highly-customizable Hugo Academic theme powered by HugoBlox
-      Kit. Easily create your personal academic website."
-    # Social accounts (used for meta tags like Twitter Cards)
-    social:
-      twitter: "GoOwnable" # Twitter/X handle for Twitter Cards (without @)
+  name: "Luca Bacco"
+  organization: "Università Campus Bio-Medico di Roma"
+  type: person
+  tagline: "Assistant Professor & AI Research Scientist"
+  description: "Personal academic website of Luca Bacco. Research in Natural Language Processing, Large Language Models, Multimodal Learning, Explainable AI, and Biomedical AI."
+
+  social:
+    twitter: "lbacco1"
 
   # ────────────────────────────────────────────────────────────────────────────
   # THEME
