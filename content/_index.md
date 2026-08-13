@@ -11,13 +11,14 @@ sections:
     content:
       username: me
       text: ''
+      button:
+        text: Download CV
+        url: uploads/resume.pdf
       headings:
         about: ''
         education: ''
         interests: ''
-    button:
-        text: Download CV
-        url: uploads/resume.pdf
+    
     design:
       # Clean background, closer to the style we want
       background:
