@@ -91,5 +91,23 @@ sections:
         link: /publications/
     design:
       view: citation
-  
+
+  # News
+  - block: collection
+    id: news
+    content:
+      title: 'News'
+      count: 5
+      sort_by: Date
+      sort_ascending: false
+      filters:
+        folders:
+          - news
+      archive:
+        enable: true
+        text: All news
+        link: /news/
+    design:
+      view: date-title-summary
+      columns: 1
 ---
