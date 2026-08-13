@@ -13,4 +13,5 @@ publication_types:
 - paper-conference
 publication: '*24th International Conference on Artificial Intelligence in Medicine
   (AIME 2026)*'
+summary: "Investigates multimodal wearable data for predicting epileptic seizures."
 ---

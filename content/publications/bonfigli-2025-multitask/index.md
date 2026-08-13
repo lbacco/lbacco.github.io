@@ -16,4 +16,5 @@ links:
 - name: URL
   url: https://doi.org/10.1016/j.compbiomed.2025.110050
 featured: true
+summary: "Combines multi-task learning and instance selection to reduce biomedical NLP training data while preserving competitive performance."
 ---

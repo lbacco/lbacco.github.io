@@ -16,4 +16,5 @@ links:
 - name: URL
   url: https://doi.org/10.1016/j.knosys.2025.113079
 featured: true
+summary: "Transfers biomedical domain and task knowledge from English to lower-resource languages through cross-lingual sentence-embedding distillation."
 ---
