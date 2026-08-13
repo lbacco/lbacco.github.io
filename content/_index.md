@@ -110,4 +110,28 @@ sections:
     design:
       view: date-title-summary
       columns: 1
+  # NEWS_BLOCK_START
+  - block: collection
+    id: news
+    content:
+      title: 'News'
+      text: ''
+      count: 5
+      sort_by: Date
+      sort_ascending: false
+      filters:
+        folders:
+          - news
+      archive:
+        enable: true
+        text: All news
+        link: /news/
+    design:
+      view: date-title-summary
+      columns: 1
+      show_date: true
+      show_read_time: false
+      show_read_more: true
+  # NEWS_BLOCK_END
+
 ---
