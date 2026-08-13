@@ -1,0 +1,207 @@
+[
+  {
+    "match": "artificial intelligence based intervertebral discs grading from",
+    "kind": "journal",
+    "summary": "Develops an AI pipeline for intervertebral-disc detection and explainable Pfirrmann grading from lumbar MRI."
+  },
+  {
+    "match": "preoperative radiomic biomarkers reflect functional shoulder impairment",
+    "kind": "journal",
+    "summary": "Studies the relationship between preoperative MRI radiomic biomarkers and functional impairment in rotator cuff tears."
+  },
+  {
+    "match": "how technologies are driving digital innovation in",
+    "kind": "journal",
+    "summary": "Reviews how digital technologies have been used to support mosquito surveillance systems worldwide over the past decade."
+  },
+  {
+    "match": "discriminative and predictive power of radiomics features",
+    "kind": "journal",
+    "summary": "Investigates the discriminative and predictive value of preoperative MRI radiomic features in patients with supraspinatus lesions."
+  },
+  {
+    "match": "adopting machine learning to predict breast cancer",
+    "kind": "journal",
+    "summary": "Applies machine learning to predict adherence to lifestyle recommendations and quality-of-life outcomes in breast cancer patients."
+  },
+  {
+    "match": "price variations in food products a time",
+    "kind": "journal",
+    "summary": "Introduces a time-series dataset for studying regional food-price variation across Italian supermarkets."
+  },
+  {
+    "match": "a garch temporal fusion transformer model for",
+    "kind": "journal",
+    "summary": "Combines GARCH modelling with a Temporal Fusion Transformer for exchange-traded-fund volatility prediction."
+  },
+  {
+    "match": "efficient multi task learning with instance selection",
+    "kind": "journal",
+    "summary": "Combines multi-task learning and instance selection to make biomedical NLP training more data-efficient."
+  },
+  {
+    "match": "a prediction of drugs transport distribution and",
+    "kind": "journal",
+    "summary": "Uses a multicompartmental physiologically based pharmacokinetic model to study drug transport, distribution, and absorption."
+  },
+  {
+    "match": "feature based knowledge distillation for explainable detection",
+    "kind": "journal",
+    "summary": "Explores feature-based knowledge distillation for explainable detection of pulmonary diseases."
+  },
+  {
+    "match": "cross lingual distillation for domain knowledge transfer",
+    "kind": "journal",
+    "summary": "Transfers domain knowledge across languages through sentence-transformer distillation for specialized NLP settings."
+  },
+  {
+    "match": "from pre training to fine tuning an",
+    "kind": "journal",
+    "summary": "Analyzes biomedical language models across pre-training, domain adaptation, fine-tuning, and representation behaviour."
+  },
+  {
+    "match": "quantifying treatments as usual and with technologies",
+    "kind": "journal",
+    "summary": "Quantifies conventional and technology-assisted neurorehabilitation treatments for individuals with spinal cord injury."
+  },
+  {
+    "match": "investigating stock prediction using lstm networks and",
+    "kind": "journal",
+    "summary": "Studies stock prediction under high uncertainty by combining LSTM models with sentiment analysis of social-media data."
+  },
+  {
+    "match": "a text style transfer system for reducing",
+    "kind": "journal",
+    "summary": "Develops a medical text style-transfer system aimed at reducing the expertise gap between physicians and patients."
+  },
+  {
+    "match": "on the instability of further pre training",
+    "kind": "journal",
+    "summary": "Examines the stability of BERT under further pre-training and how very small changes can affect downstream behaviour."
+  },
+  {
+    "match": "advancing ecg biometrics through vision transformers a",
+    "kind": "journal",
+    "summary": "Investigates Vision Transformers and confidence-aware modelling for ECG-based biometric identification."
+  },
+  {
+    "match": "layered meta learning algorithm for predicting adverse",
+    "kind": "journal",
+    "summary": "Proposes a layered meta-learning approach for predicting adverse events in type 1 diabetes."
+  },
+  {
+    "match": "natural language processing in low back pain",
+    "kind": "journal",
+    "summary": "Systematically reviews natural language processing methods applied to low back pain and spine diseases."
+  },
+  {
+    "match": "artificial intelligence and computer aided diagnosis in",
+    "kind": "journal",
+    "summary": "Reviews artificial-intelligence and computer-aided-diagnosis approaches for chronic low back pain."
+  },
+  {
+    "match": "machine learning analysis of high grade serous",
+    "kind": "journal",
+    "summary": "Applies machine learning to proteomic data from high-grade serous ovarian cancer to investigate candidate biomarkers."
+  },
+  {
+    "match": "explainable sentiment analysis a hierarchical transformer based",
+    "kind": "journal",
+    "summary": "Uses hierarchical Transformer-based extractive summarization to support explainable sentiment analysis."
+  },
+  {
+    "match": "the impact of the intestinal microbiota and",
+    "kind": "journal",
+    "summary": "Examines relationships among intestinal microbiota, mucosal permeability, and three antibiotic drugs."
+  },
+  {
+    "match": "on the evaluation of biomedical text simplification",
+    "kind": "conference",
+    "summary": "Benchmarks datasets and evaluation settings for biomedical text simplification."
+  },
+  {
+    "match": "benchmarking automatic question generation from clinical practice",
+    "kind": "conference",
+    "summary": "Benchmarks automatic question generation from clinical practice guidelines using low back pain management as a case study."
+  },
+  {
+    "match": "neural pathway similarity analysis for efficient glycemic",
+    "kind": "conference",
+    "summary": "Investigates neural-pathway similarity as a strategy for efficient glycemic-event prediction."
+  },
+  {
+    "match": "performance of different wearable sensor configurations in",
+    "kind": "conference",
+    "summary": "Compares wearable-sensor configurations for sleep/wake classification with and without apnoea events."
+  },
+  {
+    "match": "ecg based non invasive glycaemic estimation in",
+    "kind": "conference",
+    "summary": "Explores non-invasive glycaemic estimation from ECG signals in type 1 diabetes."
+  },
+  {
+    "match": "deep learning based coronary artery segmentation for",
+    "kind": "conference",
+    "summary": "Uses deep learning for coronary-artery segmentation to compare CCTA reconstruction methods."
+  },
+  {
+    "match": "lightweight multimodal deep learning for continuous respiratory",
+    "kind": "conference",
+    "summary": "Explores lightweight multimodal deep learning for continuous respiratory-rate estimation from ECG and PPG."
+  },
+  {
+    "match": "edge computer vision for arboviruses vectors and",
+    "kind": "conference",
+    "summary": "Investigates edge computer vision for arbovirus-vector detection and global-health surveillance."
+  },
+  {
+    "match": "a multimodal wearable framework for predicting epileptic",
+    "kind": "conference",
+    "summary": "Develops a multimodal wearable-data framework for epileptic-seizure prediction."
+  },
+  {
+    "match": "multi view lumbar mri for therapy oriented",
+    "kind": "conference",
+    "summary": "Studies multi-view lumbar MRI for therapy-oriented decision support in low back pain."
+  },
+  {
+    "match": "doctor is that you evaluating large language",
+    "kind": "conference",
+    "summary": "Evaluates large language models on real questions from Italy's medical-school entrance examinations."
+  },
+  {
+    "match": "a novel real world dataset of italian",
+    "kind": "conference",
+    "summary": "Introduces a real-world Italian clinical-note dataset for NLP-based decision support in low back pain treatment."
+  },
+  {
+    "match": "natural language processing in healthcare a bird",
+    "kind": "conference",
+    "summary": "Provides a broad overview of natural language processing methods and applications in healthcare."
+  },
+  {
+    "match": "postural data analysis using ai powered classification",
+    "kind": "conference",
+    "summary": "Applies AI-based classification models to postural-data analysis."
+  },
+  {
+    "match": "photoplethysmographic signal quality assessment a comparative study",
+    "kind": "conference",
+    "summary": "Compares supervised and unsupervised neural networks for photoplethysmographic signal-quality assessment."
+  },
+  {
+    "match": "extractive summarization for explainable sentiment analysis using",
+    "kind": "conference",
+    "summary": "Uses Transformer-based extractive summarization to provide explanations for sentiment-analysis predictions."
+  },
+  {
+    "match": "single beat ecg based identification system development",
+    "kind": "conference",
+    "summary": "Develops and tests the robustness of a single-beat ECG-based identification system across different conditions."
+  },
+  {
+    "match": "a machine learning approach for sentiment analysis",
+    "kind": "conference",
+    "summary": "Applies machine learning to sentiment analysis of Italian-language healthcare reviews."
+  }
+]
