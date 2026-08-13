@@ -1,116 +1,147 @@
 schema: hugoblox/author/v1
+
 slug: me
 is_owner: true
+
 name:
-  display: Dr. Alex Johnson
-  given: Alex
-  family: Johnson
-  alternate: ''  # Example: 王伟
-  pronunciation: ''  # Example: Wáng Wěi
-  pronouns: he/him
+  display: Luca Bacco
+  given: Luca
+  family: Bacco
+  alternate: ''
+  pronunciation: ''
+  pronouns: 'He/Him'
+
 postnominals:
   - PhD
-  - MIEEE
-status:
-  icon: "☕️"
-role: Senior AI Research Scientist
+
+role: Assistant Professor & AI Research Scientist
+
 bio: |
-  Alex Johnson is a Senior AI Research Scientist at Meta AI. His research
-  has been published in top conferences like NeurIPS and ICML, with over
-  10,000 citations. Alex is passionate about pushing the boundaries of AI
-  while ensuring ethical development.
+  I am an Assistant Professor in the Department of Engineering at
+  Università Campus Bio-Medico di Roma. My research focuses on artificial
+  intelligence, with particular interests in natural language processing,
+  large language models, multimodal learning, explainable AI, and biomedical
+  applications.
+
+  I am particularly interested in developing reliable and data-efficient
+  machine learning methods for low-data and specialized-domain settings,
+  and in translating advances in AI into interdisciplinary biomedical
+  research.
 
 affiliations:
-  - name: Meta AI
-    url: https://ai.meta.com/
+  - name: Università Campus Bio-Medico di Roma
 
 links:
   - icon: at-symbol
-    url: mailto:alex.johnson@example.com
+    url: mailto:lbacco.ai@gmail.com
     label: E-mail Me
   - icon: brands/x
     url: https://x.com/example
   - icon: brands/github
-    url: https://github.com/example
+    url: https://github.com/lbacco
   - icon: brands/linkedin
-    url: https://www.linkedin.com/in/example/
+    url: https://www.linkedin.com/in/lbacco/
   - icon: academicons/google-scholar
-    url: https://scholar.google.com/citations?user=example
+    url: https://scholar.google.com/citations?user=Aw4cEzMAAAAJ
   - icon: academicons/orcid
-    url: https://orcid.org/0000-0002-1825-0097
+    url: https://orcid.org/0000-0001-5462-2727
 
 interests:
+  - Natural Language Processing
   - Large Language Models
-  - Computer Vision
-  - Reinforcement Learning
-  - AI Ethics
+  - Multimodal Learning
+  - Explainable AI
+  - Biomedical AI
+  - Representation Learning
 
 education:
-  - degree: PhD Computer Science
-    institution: Stanford University
-    start: 2015-09-01
-    end: 2019-06-30
+  - degree: PhD in Information Technology for Biomedicine
+    institution: Università Campus Bio-Medico di Roma
+    start: 2019-11
+    end: 2023-03
     summary: |
-      Thesis on scaling laws for neural language models. Published 5 papers in NeurIPS and ICML.
-    button:
-      text: Download dissertation
-      url: /resume.pdf
-      icon: hero/arrow-down-tray
-  - degree: MS Computer Science
-    institution: Carnegie Mellon University
-    start: 2013-09-01
-    end: 2015-05-31
-  - degree: BS Computer Science
-    institution: MIT
-    start: 2009-09-01
-    end: 2013-05-31
+      Thesis: *Exploring New Technologies in Healthcare: Advancing Natural
+      Language Processing*. Research on Transformer-based NLP for biomedical
+      applications, with emphasis on explainability, domain adaptation, and
+      medical text simplification.
+
+  - degree: MSc in Biomedical Engineering
+    institution: Università Campus Bio-Medico di Roma
+    end: 2019-02-01
+    summary: |
+      Graduated 110/110 cum laude. Thesis on the development of a motion
+      control system for an anthropomorphic manipulator based on online
+      extraction of muscle synergies.
 
 experience:
-  - role: Senior AI Research Scientist
-    org: Meta AI
-    start: 2020-01-01
+  - role: Assistant Professor
+    org: Università Campus Bio-Medico di Roma
+    start: 2025-09-01
     summary: |
-      Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models.
-    button:
-      text: View portfolio
-      url: /
-      icon: hero/arrow-down-tray
-  - role: AI Research Intern
-    org: OpenAI
-    start: 2019-06-01
-    end: 2019-12-31
+      Leading multidisciplinary AI research on large language models,
+      natural language processing, multimodal learning, computer vision,
+      physiological signals, and generative AI. Supervising and mentoring
+      PhD students and thesis projects.
+
+  - role: Postdoctoral Researcher
+    org: Università Campus Bio-Medico di Roma
+    start: 2022-11-01
+    end: 2025-08-31
     summary: |
-      Worked on GPT-3 scaling. Co-authored paper on prompt engineering.
+      Research on multimodal AI, large language models, explainable AI,
+      natural language processing, and time-series modelling, with a strong
+      focus on biomedical applications.
+
+  - role: Visiting PhD Student
+    org: University of Groningen
+    start: 2022-01-01
+    end: 2022-07-31
+    summary: |
+      Conducted research at the Computational Linguistics Department on
+      Transformer reliability, domain adaptation, and text style transfer.
+
+  - role: PhD Candidate
+    org: Università Campus Bio-Medico di Roma
+    start: 2019-11-01
+    end: 2022-11-30
+    summary: |
+      Research in explainable AI and natural language processing, focusing
+      on Transformer-based models and biomedical applications.
 
 skills:
-  - name: Technical Skills
+  - name: AI & Machine Learning
+    items:
+      - label: Large Language Models
+        level: 5
+      - label: Natural Language Processing
+        level: 5
+      - label: Multimodal Learning
+        level: 5
+      - label: Explainable AI
+        level: 5
+      - label: Time-series Modelling
+        level: 4
+
+  - name: Programming & Frameworks
     items:
       - label: Python
         level: 5
-      - label: Machine Learning
+      - label: PyTorch
         level: 5
-      - label: Cloud Computing
-        level: 4
-  - name: Research & Communication
-    items:
-      - label: Academic Writing
+      - label: Hugging Face
         level: 5
-      - label: Conference Presentations
-        level: 4
-      - label: Grant Proposals
-        level: 4
+      - label: TensorFlow
+        level: 5
+      - label: scikit-learn
+        level: 5
 
 languages:
-  - name: English
+  - name: Italian
     level: 5
     label: Native
-  - name: Spanish
-    level: 4
-    label: Fluent
 
-awards:
-  - title: Best Paper Award
-    awarder: NeurIPS
-    date: "2022-12-01"
-    summary: Awarded for groundbreaking work on efficient training of large models.
-    icon: hero/trophy
+  - name: English
+    level: 4
+    label: Professional proficiency
+
+awards: []
