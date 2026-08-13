@@ -76,5 +76,20 @@ sections:
         data are limited or expensive to obtain.
     design:
       columns: '1'
-
+  - block: collection
+    id: publications
+    content:
+      title: 'Selected Publications'
+      text: ''
+      filters:
+        folders:
+          - publications
+        featured_only: true
+      archive:
+        enable: true
+        text: All publications
+        link: /publications/
+    design:
+      view: citation
+  
 ---
