@@ -10,8 +10,12 @@ authors:
 - L. Bacco
 - ' others'
 date: '2026-01-01'
-publishDate: '2026-08-13T17:37:29.947618Z'
+publishDate: '2026-08-13T18:06:07.405117Z'
 publication_types:
 - article-journal
 publication: '*Frontiers in Bioengineering and Biotechnology*'
+doi: 10.3389/fbioe.2026.1774121
+links:
+- name: URL
+  url: https://doi.org/10.3389/fbioe.2026.1774121
 ---

@@ -7,7 +7,7 @@ authors:
 - L. Pecchia
 - M. Merone
 date: '2026-01-01'
-publishDate: '2026-08-13T17:37:30.042183Z'
+publishDate: '2026-08-13T18:06:07.572189Z'
 publication_types:
 - paper-conference
 publication: '*XVII Mediterranean Conference on Medical and Biological Engineering

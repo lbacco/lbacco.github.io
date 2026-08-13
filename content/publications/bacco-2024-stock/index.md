@@ -9,8 +9,12 @@ authors:
 - M. Papi
 - M. Merone
 date: '2024-01-01'
-publishDate: '2026-08-13T17:37:29.988181Z'
+publishDate: '2026-08-13T18:06:07.465480Z'
 publication_types:
 - article-journal
 publication: '*IEEE Access*'
+doi: 10.1109/ACCESS.2024.3450311
+links:
+- name: URL
+  url: https://doi.org/10.1109/ACCESS.2024.3450311
 ---

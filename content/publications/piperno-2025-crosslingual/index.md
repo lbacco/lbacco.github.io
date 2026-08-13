@@ -7,8 +7,13 @@ authors:
 - M. Merone
 - L. Pecchia
 date: '2025-01-01'
-publishDate: '2026-08-13T17:37:29.978232Z'
+publishDate: '2026-08-13T18:06:07.451424Z'
 publication_types:
 - article-journal
 publication: '*Knowledge-Based Systems*'
+doi: 10.1016/j.knosys.2025.113079
+links:
+- name: URL
+  url: https://doi.org/10.1016/j.knosys.2025.113079
+featured: true
 ---

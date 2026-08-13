@@ -8,7 +8,7 @@ authors:
 - M. Merone
 - L. Bacco
 date: '2026-01-01'
-publishDate: '2026-08-13T17:37:30.048787Z'
+publishDate: '2026-08-13T18:06:07.582539Z'
 publication_types:
 - paper-conference
 publication: '*24th International Conference on Artificial Intelligence in Medicine

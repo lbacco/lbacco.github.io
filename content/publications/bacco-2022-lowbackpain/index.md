@@ -13,8 +13,12 @@ authors:
 - R. Papalia
 - V. Denaro
 date: '2022-01-01'
-publishDate: '2026-08-13T17:37:30.004895Z'
+publishDate: '2026-08-13T18:06:07.490983Z'
 publication_types:
 - article-journal
 publication: '*Frontiers in Surgery*'
+doi: 10.3389/fsurg.2022.957085
+links:
+- name: URL
+  url: https://doi.org/10.3389/fsurg.2022.957085
 ---

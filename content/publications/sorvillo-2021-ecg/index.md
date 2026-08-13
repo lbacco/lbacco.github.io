@@ -10,7 +10,7 @@ authors:
 - G. Pennazza
 - G. Iannello
 date: '2021-01-01'
-publishDate: '2026-08-13T17:37:30.076166Z'
+publishDate: '2026-08-13T18:06:07.620475Z'
 publication_types:
 - paper-conference
 publication: '*2021 IEEE International Workshop on Metrology for Industry 4.0 & IoT

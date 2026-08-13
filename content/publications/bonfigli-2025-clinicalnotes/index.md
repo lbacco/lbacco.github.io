@@ -15,7 +15,7 @@ authors:
 - M. Merone
 - L. Pecchia
 date: '2025-01-01'
-publishDate: '2026-08-13T17:37:30.058943Z'
+publishDate: '2026-08-13T18:06:07.596822Z'
 publication_types:
 - paper-conference
 publication: '*Eleventh Italian Conference on Computational Linguistics (CLiC-it)*'

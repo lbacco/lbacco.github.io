@@ -12,8 +12,12 @@ authors:
 - R. Papalia
 - V. Denaro
 date: '2022-01-01'
-publishDate: '2026-08-13T17:37:30.008313Z'
+publishDate: '2026-08-13T18:06:07.495685Z'
 publication_types:
 - article-journal
 publication: '*International Journal of Environmental Research and Public Health*'
+doi: 10.3390/ijerph19105971
+links:
+- name: URL
+  url: https://doi.org/10.3390/ijerph19105971
 ---

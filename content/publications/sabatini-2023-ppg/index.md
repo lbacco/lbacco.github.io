@@ -11,7 +11,7 @@ authors:
 - M. Merone
 - L. Vollero
 date: '2023-01-01'
-publishDate: '2026-08-13T17:37:30.069315Z'
+publishDate: '2026-08-13T18:06:07.611092Z'
 publication_types:
 - paper-conference
 publication: '*2023 IEEE International Workshop on Metrology for Industry 4.0 & IoT

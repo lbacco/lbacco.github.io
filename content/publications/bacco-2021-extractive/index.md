@@ -6,7 +6,7 @@ authors:
 - M. Merone
 - F. Dell'Orletta
 date: '2021-01-01'
-publishDate: '2026-08-13T17:37:30.072798Z'
+publishDate: '2026-08-13T18:06:07.615876Z'
 publication_types:
 - paper-conference
 publication: '*Sixth International Workshop on eXplainable SENTIment Mining and EmotioN

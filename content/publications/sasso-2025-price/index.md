@@ -10,8 +10,12 @@ authors:
 - T. Laureti
 - L. Vollero
 date: '2025-01-01'
-publishDate: '2026-08-13T17:37:29.961373Z'
+publishDate: '2026-08-13T18:06:07.425130Z'
 publication_types:
 - article-journal
 publication: '*Data in Brief*'
+doi: 10.1016/j.dib.2025.112089
+links:
+- name: URL
+  url: https://doi.org/10.1016/j.dib.2025.112089
 ---

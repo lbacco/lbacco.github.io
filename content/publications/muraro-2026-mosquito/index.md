@@ -7,8 +7,12 @@ authors:
 - L. Bacco
 - ' others'
 date: '2026-01-01'
-publishDate: '2026-08-13T17:37:29.951211Z'
+publishDate: '2026-08-13T18:06:07.410973Z'
 publication_types:
 - article-journal
 publication: '*BMJ Public Health*'
+doi: 10.1136/bmjph-2025-003145
+links:
+- name: URL
+  url: https://doi.org/10.1136/bmjph-2025-003145
 ---
