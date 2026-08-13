@@ -1,0 +1,224 @@
+name: Curate publications page
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  curate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+
+      - name: Create curated publications pages
+        shell: bash
+        run: |
+          mkdir -p content/publications content/all-publications
+
+          cat > content/publications/_index.md <<'PAGEEOF'
+          ---
+          title: Publications
+          type: landing
+
+          sections:
+            - block: markdown
+              content:
+                title: Publications
+                text: |-
+                  My research focuses on **reliable and data-efficient AI for biomedical applications**, with particular emphasis on **natural language processing, large language models, multimodal learning, explainability, and clinical decision support**.
+
+                  A complete and up-to-date list is also available on [Google Scholar](https://scholar.google.com/citations?user=Aw4cEzMAAAAJ). You can also browse the [complete publication archive](/all-publications/).
+
+                  _Last updated: August 2026._
+
+                  ## Selected Journal Publications
+
+                  Giaccone, P., D'Antoni, F., **Bacco, L.**, Russo, F., Papalia, G.F., Vadalà, G., Papalia, R., Pecchia, L., Denaro, V., Merone, M.  
+                  **[Artificial intelligence based intervertebral discs grading: From unsupervised detection to explainable Pfirrmann classification](https://doi.org/10.1016/j.bspc.2026.110177)**  
+                  _Biomedical Signal Processing and Control_, 2026.  
+                  → Builds an end-to-end lumbar MRI pipeline combining unsupervised disc detection, eight-level Pfirrmann grading, visual explanations, and confidence-aware rejection.
+
+                  Piperno, R., **Bacco, L.**, Dell'Orletta, F., Merone, M., Pecchia, L.  
+                  **[Cross-Lingual Distillation for Domain Knowledge Transfer with Sentence Transformers](https://doi.org/10.1016/j.knosys.2025.113079)**  
+                  _Knowledge-Based Systems_, 2025.  
+                  → Transfers biomedical domain and task knowledge from English to lower-resource languages through cross-lingual sentence-embedding distillation.
+
+                  Bonfigli, A., **Bacco, L.**, Pecchia, L., Merone, M., Dell'Orletta, F.  
+                  **[Efficient Multi-Task Learning with Instance Selection for Biomedical NLP](https://doi.org/10.1016/j.compbiomed.2025.110050)**  
+                  _Computers in Biology and Medicine_, 2025.  
+                  → Combines multi-task learning and instance selection to reduce biomedical NLP training data while preserving competitive performance.
+
+                  Bonfigli, A., **Bacco, L.**, Merone, M., Dell'Orletta, F.  
+                  **[From Pre-training to Fine-tuning: An In-depth Analysis of Large Language Models in the Biomedical Domain](https://doi.org/10.1016/j.artmed.2024.103003)**  
+                  _Artificial Intelligence in Medicine_, 2024.  
+                  → Systematically compares encoder and decoder language models, domain adaptation, fine-tuning data size, and internal representations in biomedical NLP.
+
+                  **Bacco, L.**, Dell'Orletta, F., Lai, H., Merone, M., Nissim, M.  
+                  **[A Text Style Transfer System for Reducing the Physician-Patient Expertise Gap: An Analysis with Automatic and Human Evaluations](https://doi.org/10.1016/j.eswa.2023.120874)**  
+                  _Expert Systems with Applications_, 2023.  
+                  → Uses sentence embeddings to mine pseudo-parallel expert-lay data and train a medical text simplification system evaluated with both automatic and human assessments.
+
+                  **Bacco, L.**, Minnema, G., Caselli, T., Dell'Orletta, F., Merone, M., Nissim, M.  
+                  **[On the Instability of Further Pre-Training: Does a Single Sentence Matter to BERT?](https://doi.org/10.1016/j.nlp.2023.100037)**  
+                  _Natural Language Processing Journal_, 2023.  
+                  → Shows that even one sentence of additional BERT pre-training can change downstream fine-tuning trajectories and performance, exposing model-instability issues.
+
+                  ## Selected Conference Publications
+
+                  Bonfigli, A., Di Giacinto, A.M., Giordani, F., Pecchia, L., Merone, M., **Bacco, L.**  
+                  **A Multimodal Wearable Framework for Predicting Epileptic Seizures**  
+                  _24th International Conference on Artificial Intelligence in Medicine (AIME)_, 2026.  
+                  → Investigates multimodal wearable data for predicting epileptic seizures.
+
+                  Piperno, R., **Bacco, L.**, Papalia, G.F., Russo, F., Maltese, G., Vadalà, G., Papalia, R., Pecchia, L., Merone, M.  
+                  **[Multi-View Lumbar MRI for Therapy-Oriented Decision Support System in Low Back Pain](https://doi.org/10.1007/978-3-032-30813-9_79)**  
+                  _24th International Conference on Artificial Intelligence in Medicine (AIME)_, 2026.  
+                  → Explores multi-view lumbar MRI as a basis for therapy-oriented decision support in low back pain.
+
+                  Piperno, R., Bonfigli, A., Dell'Orletta, F., Pecchia, L., Merone, M., **Bacco, L.**  
+                  **[Doctor, Is That You? Evaluating Large Language Models on Italy's Medical School Entrance Exams](https://aclanthology.org/2025.clicit-1.85/)**  
+                  _11th Italian Conference on Computational Linguistics (CLiC-it)_, 2025.  
+                  → Benchmarks open-weight language models on more than 3,300 real Italian medical-school entrance questions, showing a clear advantage for large multilingual models over Italian-only models.
+
+                  Bonfigli, A., Piperno, R., **Bacco, L.**, Dell'Orletta, F., Brunato, D., Crispino, F., Papalia, G.F., Russo, F., Vadalà, G., Papalia, R., Merone, M., Pecchia, L.  
+                  **[A Novel Real-World Dataset of Italian Clinical Notes for NLP-based Decision Support in Low Back Pain Treatment](https://aclanthology.org/2025.clicit-1.12/)**  
+                  _11th Italian Conference on Computational Linguistics (CLiC-it)_, 2025.  
+                  → Releases an annotated Italian low-back-pain dataset of 176 patients with multimodal clinical information and benchmarks classical NLP against a fine-tuned Italian BERT model.
+
+                  ---
+
+                  **[Browse the complete publication archive →](/all-publications/)**
+
+              design:
+                columns: '1'
+          ---
+          PAGEEOF
+
+          cat > content/all-publications/_index.md <<'ALLEOF'
+          ---
+          title: All Publications
+          type: landing
+
+          sections:
+            - block: markdown
+              content:
+                title: Complete Publication List
+                text: |-
+                  This archive contains my journal articles and conference proceedings imported from the publication list in my CV.
+
+                  [← Back to selected publications](/publications/)
+              design:
+                columns: '1'
+
+            - block: collection
+              content:
+                count: 0
+                filters:
+                  folders:
+                    - publications
+                sort_by: Date
+                sort_ascending: false
+              design:
+                view: citation
+          ---
+          ALLEOF
+
+      - name: Add concise summaries to selected publication entries
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          selected = {
+              "artificial intelligence based intervertebral discs grading from unsupervised detection to explainable pfirrmann classification":
+                  "Builds an end-to-end lumbar MRI pipeline combining unsupervised disc detection, eight-level Pfirrmann grading, visual explanations, and confidence-aware rejection.",
+              "cross lingual distillation for domain knowledge transfer with sentence transformers":
+                  "Transfers biomedical domain and task knowledge from English to lower-resource languages through cross-lingual sentence-embedding distillation.",
+              "efficient multi task learning with instance selection for biomedical nlp":
+                  "Combines multi-task learning and instance selection to reduce biomedical NLP training data while preserving competitive performance.",
+              "from pre training to fine tuning an in depth analysis of large language models in the biomedical domain":
+                  "Systematically compares encoder and decoder language models, domain adaptation, fine-tuning data size, and internal representations in biomedical NLP.",
+              "a text style transfer system for reducing the physician patient expertise gap an analysis with automatic and human evaluations":
+                  "Uses sentence embeddings to mine pseudo-parallel expert-lay data and train a medical text simplification system evaluated with both automatic and human assessments.",
+              "on the instability of further pre training does a single sentence matter to bert":
+                  "Shows that even one sentence of additional BERT pre-training can change downstream fine-tuning trajectories and performance, exposing model-instability issues.",
+              "a multimodal wearable framework for predicting epileptic seizures":
+                  "Investigates multimodal wearable data for predicting epileptic seizures.",
+              "multi view lumbar mri for therapy oriented decision support system in low back pain":
+                  "Explores multi-view lumbar MRI as a basis for therapy-oriented decision support in low back pain.",
+              "doctor is that you evaluating large language models on italy s medical school entrance exams":
+                  "Benchmarks open-weight language models on more than 3,300 real Italian medical-school entrance questions, showing a clear advantage for large multilingual models over Italian-only models.",
+              "a novel real world dataset of italian clinical notes for nlp based decision support in low back pain treatment":
+                  "Releases an annotated Italian low-back-pain dataset of 176 patients with multimodal clinical information and benchmarks classical NLP against a fine-tuned Italian BERT model.",
+          }
+
+          featured_journals = {
+              "artificial intelligence based intervertebral discs grading from unsupervised detection to explainable pfirrmann classification",
+              "cross lingual distillation for domain knowledge transfer with sentence transformers",
+              "efficient multi task learning with instance selection for biomedical nlp",
+              "from pre training to fine tuning an in depth analysis of large language models in the biomedical domain",
+              "a text style transfer system for reducing the physician patient expertise gap an analysis with automatic and human evaluations",
+              "on the instability of further pre training does a single sentence matter to bert",
+          }
+
+          def norm(s):
+              s = s.lower().replace("’", "'").replace("–", "-").replace("—", "-")
+              return re.sub(r"[^a-z0-9]+", " ", s).strip()
+
+          changed = []
+          for path in Path("content/publications").glob("*/index.md"):
+              text = path.read_text(encoding="utf-8")
+              if not text.startswith("---"):
+                  continue
+              parts = text.split("---", 2)
+              if len(parts) < 3:
+                  continue
+              front = parts[1]
+              m = re.search(r"(?mi)^title:\s*[\"']?(.*?)[\"']?\s*$", front)
+              if not m:
+                  continue
+              title_key = norm(m.group(1))
+              summary = selected.get(title_key)
+              if not summary:
+                  continue
+
+              summary_line = 'summary: "' + summary.replace('"', '\\"') + '"'
+              if re.search(r"(?m)^summary:\s*.*$", front):
+                  front = re.sub(r"(?m)^summary:\s*.*$", summary_line, front, count=1)
+              else:
+                  front = front.rstrip() + "\n" + summary_line + "\n"
+
+              if title_key in featured_journals:
+                  if re.search(r"(?m)^featured:\s*.*$", front):
+                      front = re.sub(r"(?m)^featured:\s*.*$", "featured: true", front, count=1)
+                  else:
+                      front = front.rstrip() + "\nfeatured: true\n"
+
+              path.write_text("---" + front + "---" + parts[2], encoding="utf-8")
+              changed.append(str(path))
+
+          print(f"Updated {len(changed)} selected publication entries")
+          for item in changed:
+              print(item)
+
+      - name: Commit curated publication pages
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/publications content/all-publications
+          if git diff --cached --quiet; then
+            echo "Nothing to commit"
+          else
+            git commit -m "Curate publications page"
+            git push
+          fi
