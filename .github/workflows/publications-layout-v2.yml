@@ -1,0 +1,188 @@
+name: Improve publications layout
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-publications-layout:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Create cleaner publications hub and split archives
+        shell: bash
+        run: |
+          mkdir -p content/publications content/journal-articles content/conference-papers content/all-publications
+
+          cat > content/publications/_index.md <<'PAGEEOF'
+          ---
+          title: Publications
+          type: landing
+
+          sections:
+            - block: markdown
+              content:
+                title: Publications
+                text: |-
+                  My publications span **biomedical AI, natural language processing, large language models, multimodal learning, explainable AI, and data-efficient learning**.
+
+                  Browse them by publication type:
+
+                  **[Journal Articles →](/journal-articles/)** &nbsp;&nbsp; **[Conference Papers →](/conference-papers/)** &nbsp;&nbsp; [Google Scholar ↗](https://scholar.google.com/citations?user=Aw4cEzMAAAAJ)
+              design:
+                columns: '1'
+
+            - block: collection
+              id: journals
+              content:
+                title: 'Journal Articles'
+                text: 'Recent peer-reviewed journal publications.'
+                count: 6
+                sort_by: Date
+                sort_ascending: false
+                filters:
+                  folders:
+                    - publications
+                  publication_type: article-journal
+                archive:
+                  enable: true
+                  text: 'View all journal articles →'
+                  link: /journal-articles/
+              design:
+                view: citation
+                columns: 1
+                show_read_time: false
+                show_read_more: false
+
+            - block: collection
+              id: conferences
+              content:
+                title: 'Conference Papers'
+                text: 'Recent conference and workshop papers.'
+                count: 6
+                sort_by: Date
+                sort_ascending: false
+                filters:
+                  folders:
+                    - publications
+                  publication_type: paper-conference
+                archive:
+                  enable: true
+                  text: 'View all conference papers →'
+                  link: /conference-papers/
+              design:
+                view: citation
+                columns: 1
+                show_read_time: false
+                show_read_more: false
+          ---
+          PAGEEOF
+
+          cat > content/journal-articles/_index.md <<'JOURNALEOF'
+          ---
+          title: Journal Articles
+          type: landing
+
+          sections:
+            - block: markdown
+              content:
+                title: Journal Articles
+                text: |-
+                  Peer-reviewed journal publications, ordered from newest to oldest.
+
+                  [← Publications](/publications/) &nbsp;&nbsp; [Conference Papers →](/conference-papers/) &nbsp;&nbsp; [Google Scholar ↗](https://scholar.google.com/citations?user=Aw4cEzMAAAAJ)
+              design:
+                columns: '1'
+
+            - block: collection
+              content:
+                count: 0
+                sort_by: Date
+                sort_ascending: false
+                filters:
+                  folders:
+                    - publications
+                  publication_type: article-journal
+              design:
+                view: citation
+                columns: 1
+                show_read_time: false
+                show_read_more: false
+          ---
+          JOURNALEOF
+
+          cat > content/conference-papers/_index.md <<'CONFEOF'
+          ---
+          title: Conference Papers
+          type: landing
+
+          sections:
+            - block: markdown
+              content:
+                title: Conference Papers
+                text: |-
+                  Conference and workshop papers, ordered from newest to oldest.
+
+                  [← Publications](/publications/) &nbsp;&nbsp; [Journal Articles →](/journal-articles/) &nbsp;&nbsp; [Google Scholar ↗](https://scholar.google.com/citations?user=Aw4cEzMAAAAJ)
+              design:
+                columns: '1'
+
+            - block: collection
+              content:
+                count: 0
+                sort_by: Date
+                sort_ascending: false
+                filters:
+                  folders:
+                    - publications
+                  publication_type: paper-conference
+              design:
+                view: citation
+                columns: 1
+                show_read_time: false
+                show_read_more: false
+          ---
+          CONFEOF
+
+          # Keep the old URL useful, but turn it into a lightweight navigation hub.
+          cat > content/all-publications/_index.md <<'ALLEOF'
+          ---
+          title: Publication Archive
+          type: landing
+
+          sections:
+            - block: markdown
+              content:
+                title: Publication Archive
+                text: |-
+                  The publication archive is now split into two shorter, easier-to-scan lists:
+
+                  ### [Journal Articles →](/journal-articles/)
+                  Peer-reviewed journal publications.
+
+                  ### [Conference Papers →](/conference-papers/)
+                  Conference and workshop publications.
+
+                  [← Back to Publications](/publications/)
+              design:
+                columns: '1'
+          ---
+          ALLEOF
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/publications/_index.md content/journal-articles/_index.md content/conference-papers/_index.md content/all-publications/_index.md
+          if git diff --cached --quiet; then
+            echo "Nothing to commit"
+          else
+            git commit -m "Improve publications navigation and layout"
+            git push
+          fi
