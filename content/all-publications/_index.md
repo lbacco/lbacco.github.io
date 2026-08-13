@@ -1,26 +1,21 @@
 ---
-title: All Publications
+title: Publication Archive
 type: landing
 
 sections:
   - block: markdown
     content:
-      title: Complete Publication List
+      title: Publication Archive
       text: |-
-        This archive contains my journal articles and conference proceedings imported from the publication list in my CV.
+        The publication archive is now split into two shorter, easier-to-scan lists:
 
-        [← Back to selected publications](/publications/)
+        ### [Journal Articles →](/journal-articles/)
+        Peer-reviewed journal publications.
+
+        ### [Conference Papers →](/conference-papers/)
+        Conference and workshop publications.
+
+        [← Back to Publications](/publications/)
     design:
       columns: '1'
-
-  - block: collection
-    content:
-      count: 0
-      filters:
-        folders:
-          - publications
-      sort_by: Date
-      sort_ascending: false
-    design:
-      view: citation
 ---
