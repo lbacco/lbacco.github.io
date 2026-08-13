@@ -1,0 +1,59 @@
+name: Add News section and homepage feed
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  add-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Create News content
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p content/news/medicon-2026-chair content/news/aime-2026-ottawa content/news/eight-papers-medicon-2026
+          echo 'LS0tCnRpdGxlOiBOZXdzCnR5cGU6IGxhbmRpbmcKCnNlY3Rpb25zOgogIC0gYmxvY2s6IGNvbGxlY3Rpb24KICAgIGNvbnRlbnQ6CiAgICAgIHRpdGxlOiBOZXdzCiAgICAgIHRleHQ6IFJlc2VhcmNoIHVwZGF0ZXMsIGNvbmZlcmVuY2VzLCBhbmQgYW5ub3VuY2VtZW50cy4KICAgICAgY291bnQ6IDAKICAgICAgc29ydF9ieTogRGF0ZQogICAgICBzb3J0X2FzY2VuZGluZzogZmFsc2UKICAgICAgZmlsdGVyczoKICAgICAgICBmb2xkZXJzOgogICAgICAgICAgLSBuZXdzCiAgICBkZXNpZ246CiAgICAgIHZpZXc6IGRhdGUtdGl0bGUtc3VtbWFyeQogICAgICBjb2x1bW5zOiAxCiAgICAgIHNob3dfZGF0ZTogdHJ1ZQogICAgICBzaG93X3JlYWRfdGltZTogZmFsc2UKICAgICAgc2hvd19yZWFkX21vcmU6IHRydWUKLS0tCg==' | base64 --decode > content/news/_index.md
+          echo 'LS0tCnRpdGxlOiAiQ2hhaXJpbmcgYXQgTUVESUNPTiAyMDI2IG9uIFNlcHRlbWJlciAxNyIKZGF0ZTogMjAyNi0wOC0xM1QyMDowMDowMCswMjowMAphdXRob3JzOgogIC0gbWUKY2F0ZWdvcmllczoKICAtIE5ld3MKdGFnczoKICAtIE1FRElDT04gMjAyNgogIC0gQ29uZmVyZW5jZQpzdW1tYXJ5OiAiSSBoYXZlIGJlZW4gaW52aXRlZCB0byBzZXJ2ZSBhcyBDaGFpciBmb3IgdGhlIHBsZW5hcnkgc2Vzc2lvbiBvbiBTZXB0ZW1iZXIgMTcgYXQgTUVESUNPTiAyMDI2IGluIFNpZW5hLiIKcmVhZGluZ190aW1lOiBmYWxzZQpkcmFmdDogZmFsc2UKdHlwZTogYmxvZwotLS0KCkkgYW0gcGxlYXNlZCB0byBzaGFyZSB0aGF0IEkgaGF2ZSBiZWVuIGludml0ZWQgdG8gc2VydmUgYXMgKipDaGFpciBmb3IgdGhlIHBsZW5hcnkgc2Vzc2lvbiBvbiBTZXB0ZW1iZXIgMTcqKiBhdCAqKk1FRElDT04gMjAyNioqIGluIFNpZW5hLgoKSSBhbSBsb29raW5nIGZvcndhcmQgdG8gY29udHJpYnV0aW5nIHRvIHRoZSBjb25mZXJlbmNlIGluIHRoaXMgbmV3IHJvbGUgYW5kIHRvIHRoZSBkaXNjdXNzaW9ucyBhcm91bmQgYmlvbWVkaWNhbCBlbmdpbmVlcmluZywgZGlnaXRhbCBoZWFsdGgsIGFuZCBhcnRpZmljaWFsIGludGVsbGlnZW5jZS4KCltWaWV3IHRoZSBNRURJQ09OIDIwMjYgcHJvZ3JhbW1lXShodHRwczovL2Vhc3ljaGFpci5vcmcvc21hcnQtcHJvZ3JhbS9NRURJQ09OMjAyNi9pbmRleC5odG1sKQo=' | base64 --decode > content/news/medicon-2026-chair/index.md
+          echo 'LS0tCnRpdGxlOiAiQUlNRSAyMDI2IGluIE90dGF3YSIKZGF0ZTogMjAyNi0wNy0xMFQxODowMDowMC0wNDowMAphdXRob3JzOgogIC0gbWUKY2F0ZWdvcmllczoKICAtIE5ld3MKdGFnczoKICAtIEFJTUUgMjAyNgogIC0gQ29uZmVyZW5jZQogIC0gQmlvbWVkaWNhbCBBSQpzdW1tYXJ5OiAiQmFjayBmcm9tIEFJTUUgMjAyNiBpbiBPdHRhd2EsIHdoZXJlIHR3byBQaEQgc3R1ZGVudHMgSSBoYXZlIGJlZW4gbWVudG9yaW5nIHNpbmNlIHRoZWlyIE1TYyB0aGVzZXMgcHJlc2VudGVkIHR3byBvZiBvdXIgcGFwZXJzLiIKcmVhZGluZ190aW1lOiBmYWxzZQpkcmFmdDogZmFsc2UKdHlwZTogYmxvZwotLS0KCkkgaGFkIHRoZSBwbGVhc3VyZSBvZiBhdHRlbmRpbmcgKipBSU1FIDIwMjYg4oCUIHRoZSAyNHRoIEludGVybmF0aW9uYWwgQ29uZmVyZW5jZSBvbiBBcnRpZmljaWFsIEludGVsbGlnZW5jZSBpbiBNZWRpY2luZSDigJQgaW4gT3R0YXdhLCBDYW5hZGEqKi4KCkEgcGFydGljdWxhcmx5IHJld2FyZGluZyBwYXJ0IG9mIHRoZSBjb25mZXJlbmNlIHdhcyBzZWVpbmcgKip0d28gUGhEIHN0dWRlbnRzIHdob20gSSBoYXZlIGJlZW4gbWVudG9yaW5nIHNpbmNlIHRoZWlyIE1TYyB0aGVzZXMqKiBwcmVzZW50IHR3byBvZiBvdXIgam9pbnQgcGFwZXJzOgoKLSAqQSBNdWx0aW1vZGFsIFdlYXJhYmxlIEZyYW1ld29yayBmb3IgUHJlZGljdGluZyBFcGlsZXB0aWMgU2VpenVyZXMqCi0gKk11bHRpLVZpZXcgTHVtYmFyIE1SSSBmb3IgVGhlcmFweS1PcmllbnRlZCBEZWNpc2lvbiBTdXBwb3J0IFN5c3RlbSBpbiBMb3cgQmFjayBQYWluKgoKSXQgd2FzIGdyZWF0IHRvIHNlZSByZXNlYXJjaCB0aGF0IHN0YXJ0ZWQgZHVyaW5nIHRoZWlyIHRoZXNpcyB3b3JrIGNvbnRpbnVlIHRvIGRldmVsb3AgYW5kIHJlYWNoIGFuIGludGVybmF0aW9uYWwgYXVkaWVuY2UuCgpbU2VlIHRoZSBjb25mZXJlbmNlIHBhcGVycyBvbiBteSBQdWJsaWNhdGlvbnMgcGFnZV0oL3B1YmxpY2F0aW9ucy8jY29uZmVyZW5jZS1wdWJsaWNhdGlvbnMpCg==' | base64 --decode > content/news/aime-2026-ottawa/index.md
+          echo 'LS0tCnRpdGxlOiAiRWlnaHQgcGFwZXJzIGFjY2VwdGVkIGF0IE1FRElDT04gMjAyNiIKZGF0ZTogMjAyNi0wOC0xMlQxODowMDowMCswMjowMAphdXRob3JzOgogIC0gbWUKY2F0ZWdvcmllczoKICAtIE5ld3MKdGFnczoKICAtIE1FRElDT04gMjAyNgogIC0gQ29uZmVyZW5jZQpzdW1tYXJ5OiAiRWlnaHQgb2Ygb3VyIHBhcGVycyBoYXZlIGJlZW4gYWNjZXB0ZWQgYXQgTUVESUNPTiAyMDI2LiBTZWUgeW91IGluIFNpZW5hIGZyb20gU2VwdGVtYmVyIDE0IHRvIDE3ISIKcmVhZGluZ190aW1lOiBmYWxzZQpkcmFmdDogZmFsc2UKdHlwZTogYmxvZwotLS0KCkEgZ3JlYXQgcmVzdWx0IGZvciBvdXIgcmVzZWFyY2ggYWN0aXZpdGllczogKiplaWdodCBwYXBlcnMgaGF2ZSBiZWVuIGFjY2VwdGVkIGF0IE1FRElDT04gMjAyNioqLgoKVGhlIGFjY2VwdGVkIHdvcmtzIHNwYW4gc2V2ZXJhbCBvZiB0aGUgdG9waWNzIHdlIGFyZSBjdXJyZW50bHkgZXhwbG9yaW5nLCBpbmNsdWRpbmcgYmlvbWVkaWNhbCBBSSwgbXVsdGltb2RhbCBsZWFybmluZywgcGh5c2lvbG9naWNhbCBzaWduYWxzLCBjb21wdXRlciB2aXNpb24sIGFuZCBjbGluaWNhbCBOTFAuCgpMb29raW5nIGZvcndhcmQgdG8gcHJlc2VudGluZyBhbmQgZGlzY3Vzc2luZyB0aGlzIHdvcmsgd2l0aCB0aGUgY29tbXVuaXR5LiAqKlNlZSB5b3UgaW4gU2llbmEgZnJvbSBTZXB0ZW1iZXIgMTQgdG8gMTchKioKCltNRURJQ09OIDIwMjZdKGh0dHBzOi8vbWVkaWNvbjIwMjYudW5pc2kuaXQvKSDCtyBbU2VlIG15IGNvbmZlcmVuY2UgcHVibGljYXRpb25zXSgvcHVibGljYXRpb25zLyNjb25mZXJlbmNlLXB1YmxpY2F0aW9ucykK' | base64 --decode > content/news/eight-papers-medicon-2026/index.md
+
+      - name: Show latest 5 News on homepage
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64
+          import re
+          path = Path('content/_index.md')
+          text = path.read_text(encoding='utf-8')
+          block = base64.b64decode('CiAgIyBORVdTX0JMT0NLX1NUQVJUCiAgLSBibG9jazogY29sbGVjdGlvbgogICAgaWQ6IG5ld3MKICAgIGNvbnRlbnQ6CiAgICAgIHRpdGxlOiAnTmV3cycKICAgICAgdGV4dDogJycKICAgICAgY291bnQ6IDUKICAgICAgc29ydF9ieTogRGF0ZQogICAgICBzb3J0X2FzY2VuZGluZzogZmFsc2UKICAgICAgZmlsdGVyczoKICAgICAgICBmb2xkZXJzOgogICAgICAgICAgLSBuZXdzCiAgICAgIGFyY2hpdmU6CiAgICAgICAgZW5hYmxlOiB0cnVlCiAgICAgICAgdGV4dDogQWxsIG5ld3MKICAgICAgICBsaW5rOiAvbmV3cy8KICAgIGRlc2lnbjoKICAgICAgdmlldzogZGF0ZS10aXRsZS1zdW1tYXJ5CiAgICAgIGNvbHVtbnM6IDEKICAgICAgc2hvd19kYXRlOiB0cnVlCiAgICAgIHNob3dfcmVhZF90aW1lOiBmYWxzZQogICAgICBzaG93X3JlYWRfbW9yZTogdHJ1ZQogICMgTkVXU19CTE9DS19FTkQK').decode('utf-8')
+          text = re.sub(r'\n  # NEWS_BLOCK_START.*?  # NEWS_BLOCK_END\n', '\n', text, flags=re.S)
+          if not text.startswith('---'):
+              raise SystemExit('content/_index.md does not start with YAML front matter.')
+          closing = text.find('\n---', 3)
+          if closing == -1:
+              raise SystemExit('Could not find the closing YAML delimiter in content/_index.md.')
+          text = text[:closing] + block + text[closing:]
+          path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/news content/_index.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Add News section and latest News to homepage"
+          git push
