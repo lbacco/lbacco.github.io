@@ -12,4 +12,5 @@ publishDate: '2026-08-13T17:37:29.991501Z'
 publication_types:
 - article-journal
 publication: '*Expert Systems With Applications*'
+featured: true
 ---
