@@ -216,3 +216,38 @@
     width: 100% !important;
   }
 }
+
+/* =========================================================
+   FIX CUSTOM PUBLICATIONS PAGE
+   ========================================================= */
+
+@media (min-width: 1100px) {
+
+  .pub-shell {
+    margin-left: var(--profile-content-offset) !important;
+    margin-right: var(--profile-right-margin) !important;
+
+    width: calc(
+      100vw
+      - var(--profile-content-offset)
+      - var(--profile-right-margin)
+    ) !important;
+
+    max-width: none !important;
+  }
+
+  .pub-main {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0;
+  }
+
+  .pub-item {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .pub-intro {
+    max-width: none !important;
+  }
+}
