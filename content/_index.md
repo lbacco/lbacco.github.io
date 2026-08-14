@@ -55,22 +55,22 @@ sections:
         - institution: 'Università Campus Bio-Medico di Roma'
           role: 'Assistant Professor'
           date: '09/2025 – present'
-          logo: 'logos/ucbm.png'
+          logo: 'images/logos/ucbm.png'
 
         - institution: 'Università Campus Bio-Medico di Roma'
           role: 'Postdoctoral Researcher'
           date: '11/2022 – 08/2025'
-          logo: 'logos/ucbm.png'
+          logo: 'images/logos/ucbm.png'
 
         - institution: 'University of Groningen'
           role: 'Visiting PhD Student, Computational Linguistics'
           date: '01/2022 - 07/2022'
-          logo: 'logos/groningen.png'
+          logo: 'images/logos/groningen.png'
 
         - institution: 'Università Campus Bio-Medico di Roma'
           role: 'PhD Candidate'
           date: '11/2019 – 10/2022'
-          logo: 'logos/ucbm.png'
+          logo: 'images/logos/ucbm.png'
 
 
       education:
