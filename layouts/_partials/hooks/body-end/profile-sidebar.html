@@ -43,8 +43,8 @@
         target="_blank"
         rel="noopener noreferrer"
       {{ end }}
-      aria-label="{{ .icon }}"
-      title="{{ .icon }}"
+      aria-label="{{ .label }}"
+      title="{{ .label }}"
     >
       {{ $icon_shortcode := printf `{{< icon name="%s" >}}` .icon }}
       <span class="global-profile-social-icon">
