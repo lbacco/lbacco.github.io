@@ -4,56 +4,13 @@
 
 <style>
   .pub-shell {
-    width: min(1180px, calc(100% - 2rem));
-    margin: 0 auto;
+    width: calc(100% - 3rem);
+    max-width: none;
+    margin: 0;
     padding: 3.5rem 0 6rem;
-    display: grid;
-    grid-template-columns: 235px minmax(0, 1fr);
-    gap: clamp(2.5rem, 6vw, 5.5rem);
-    align-items: start;
-  }
-  .pub-sidebar {
-    position: sticky;
-    top: 6.25rem;
-    text-align: center;
-  }
-  .pub-sidebar img {
-    width: 168px;
-    height: 168px;
-    object-fit: cover;
-    border-radius: 50%;
+  
     display: block;
-    margin: 0 auto 1.15rem;
   }
-  .pub-sidebar h2 {
-    margin: 0 0 .35rem;
-    font-size: 1.4rem;
-    line-height: 1.2;
-  }
-  .pub-sidebar .pub-role {
-    margin: 0 0 .55rem;
-    font-weight: 600;
-    line-height: 1.45;
-  }
-  .pub-sidebar .pub-affiliation,
-  .pub-sidebar .pub-location {
-    margin: .2rem 0;
-    opacity: .78;
-    line-height: 1.45;
-  }
-  .pub-sidebar-links {
-    margin-top: 1.1rem;
-    display: flex;
-    flex-direction: column;
-    gap: .45rem;
-  }
-  .pub-sidebar-links a,
-  .pub-jump a,
-  .pub-actions a {
-    text-decoration: none;
-    font-weight: 600;
-  }
-  .pub-sidebar-links a:hover,
   .pub-jump a:hover,
   .pub-actions a:hover {
     text-decoration: underline;
@@ -188,18 +145,6 @@
 </style>
 
 <div class="pub-shell">
-  <aside class="pub-sidebar" aria-label="Profile">
-    <img src="{{ "/uploads/profile.png" | relURL }}" alt="Luca Bacco">
-    <h2>Luca Bacco</h2>
-    <p class="pub-role">Assistant Professor &amp; AI Research Scientist</p>
-    <p class="pub-affiliation">Università Campus Bio-Medico di Roma</p>
-    <p class="pub-location">Rome, Italy</p>
-    <div class="pub-sidebar-links">
-      <a href="https://scholar.google.com/citations?user=Aw4cEzMAAAAJ" target="_blank" rel="noopener">Google Scholar ↗</a>
-      <a href="https://github.com/lbacco" target="_blank" rel="noopener">GitHub ↗</a>
-      <a href="{{ "/uploads/resume.pdf" | relURL }}">CV</a>
-    </div>
-  </aside>
 
   <div class="pub-main">
     <h1>Publications</h1>
