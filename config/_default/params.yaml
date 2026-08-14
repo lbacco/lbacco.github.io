@@ -12,11 +12,10 @@ hugoblox:
   # Site-level branding (for people/profiles, use the author system in content/authors/)
   # ────────────────────────────────────────────────────────────────────────────
   identity:
-  name: "Luca Bacco"
-  organization: "Università Campus Bio-Medico di Roma"
-  type: person
-  tagline: "AI Research Scientist"
-  description: "Personal website of Luca Bacco. Research in Natural Language Processing, Large Language Models, Multimodal Learning, Explainable AI, and Biomedical AI."
+    name: "Luca Bacco"
+    organization: "Università Campus Bio-Medico di Roma"
+    type: person
+    tagline: "AI Research Scientist"
 
   social:
     twitter: "lbacco1"
