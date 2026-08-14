@@ -1,0 +1,67 @@
+{{ $author := site.Data.authors.me }}
+{{ $avatar := resources.Get "media/authors/me.png" }}
+
+<aside class="global-profile-sidebar" aria-label="Profile">
+
+  {{ with $avatar }}
+    <a href="{{ "/" | relURL }}" class="global-profile-avatar-link">
+      <img
+        src="{{ .RelPermalink }}"
+        alt="{{ $author.name.display }}"
+        class="global-profile-avatar"
+      >
+    </a>
+  {{ end }}
+
+  <h2 class="global-profile-name">
+    <a href="{{ "/" | relURL }}">
+      {{ $author.name.display }}
+    </a>
+  </h2>
+
+  <p class="global-profile-role">
+    {{ $author.role }}
+  </p>
+
+  {{ with index $author.affiliations 0 }}
+    <p class="global-profile-affiliation">
+      {{ .name }}
+    </p>
+  {{ end }}
+
+  <p class="global-profile-location">
+    Rome, Italy
+  </p>
+
+  <nav class="global-profile-links global-profile-socials">
+
+  {{ range $author.links }}
+
+    <a
+      href="{{ .url }}"
+      {{ if not (strings.HasPrefix .url "mailto:") }}
+        target="_blank"
+        rel="noopener noreferrer"
+      {{ end }}
+      aria-label="{{ .icon }}"
+      title="{{ .icon }}"
+    >
+      {{ $icon_shortcode := printf `{{< icon name="%s" >}}` .icon }}
+      <span class="global-profile-social-icon">
+        {{ $icon_shortcode | $.RenderString }}
+      </span>
+    </a>
+
+  {{ end }}
+
+  <a
+    href="{{ "/uploads/resume.pdf" | relURL }}"
+    aria-label="CV"
+    title="CV"
+  >
+    {{ `{{< icon name="hero/document-arrow-down" >}}` | $.RenderString }}
+  </a>
+
+</nav>
+
+</aside>
