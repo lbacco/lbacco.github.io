@@ -38,16 +38,16 @@ sections:
 
       research_interests:
         - name: 'NLP & Large Language Models'
-          icon: '◌'
+          icon: 💬
 
         - name: 'Explainable & Reliable AI'
-          icon: '⌕'
+          icon: 🔍
 
         - name: 'Biomedical & Multimodal AI'
-          icon: '◇'
+          icon: ⚕️
 
         - name: 'Data-efficient Learning'
-          icon: '∿'
+          icon: 📊
 
 
       experience:
