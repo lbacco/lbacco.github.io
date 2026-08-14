@@ -1,0 +1,175 @@
+{{ $block := . }}
+
+<div class="profile-overview">
+
+  <div class="profile-overview-grid">
+
+
+    <!-- =====================================================
+         RESEARCH INTERESTS
+         ===================================================== -->
+
+    <div class="profile-overview-column">
+
+      <h2 class="profile-overview-title">
+        Research Interests
+      </h2>
+
+      <div class="research-interest-list">
+
+        {{ range $block.content.research_interests }}
+
+        <div class="research-interest-item">
+
+          <span class="research-interest-icon">
+            {{ .icon }}
+          </span>
+
+          <span class="research-interest-name">
+            {{ .name }}
+          </span>
+
+        </div>
+
+        {{ end }}
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         PREVIOUS EXPERIENCE
+         ===================================================== -->
+
+    <div class="profile-overview-column">
+
+      <h2 class="profile-overview-title">
+        Previous Experience
+      </h2>
+
+      <div class="profile-timeline">
+
+        {{ range $block.content.experience }}
+
+        <div class="profile-timeline-item">
+
+          <div class="profile-timeline-logo">
+
+            {{ with .logo }}
+
+            <img
+              src="{{ . | relURL }}"
+              alt="{{ $.institution }}"
+              loading="lazy"
+            >
+
+            {{ end }}
+
+          </div>
+
+
+          <div class="profile-timeline-content">
+
+            <div class="profile-timeline-header">
+
+              <span class="profile-timeline-institution">
+                {{ .institution }}
+              </span>
+
+              <span class="profile-timeline-date">
+                {{ .date }}
+              </span>
+
+            </div>
+
+
+            <div class="profile-timeline-role">
+              {{ .role }}
+            </div>
+
+          </div>
+
+        </div>
+
+        {{ end }}
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         EDUCATION
+         ===================================================== -->
+
+    <div class="profile-overview-column">
+
+      <h2 class="profile-overview-title">
+        Education
+      </h2>
+
+      <div class="profile-timeline">
+
+        {{ range $block.content.education }}
+
+        <div class="profile-timeline-item">
+
+          <div class="profile-timeline-logo">
+
+            {{ with .logo }}
+
+            <img
+              src="{{ . | relURL }}"
+              alt="{{ $.institution }}"
+              loading="lazy"
+            >
+
+            {{ end }}
+
+          </div>
+
+
+          <div class="profile-timeline-content">
+
+            <div class="profile-timeline-header">
+
+              <span class="profile-timeline-institution">
+                {{ .institution }}
+              </span>
+
+              <span class="profile-timeline-date">
+                {{ .date }}
+              </span>
+
+            </div>
+
+
+            <div class="profile-timeline-role">
+              {{ .degree }}
+            </div>
+
+
+            {{ with .thesis }}
+
+            <div class="profile-timeline-thesis">
+              <span>Thesis:</span>
+              {{ . }}
+            </div>
+
+            {{ end }}
+
+          </div>
+
+        </div>
+
+        {{ end }}
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
