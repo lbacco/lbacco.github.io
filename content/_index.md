@@ -1,36 +1,10 @@
 ---
-title: ''
-summary: 'Luca Bacco - Assistant Professor and AI Research Scientist'
+title: 'Luca Bacco'
+summary: 'Luca Bacco - AI Research Scientist'
 date: 2026-08-13
 type: landing
 
 sections:
-
-  # Biography / profile
-  - block: resume-biography-3
-    content:
-      username: me
-      text: ''
-      button:
-        text: Download CV
-        url: uploads/resume.pdf
-      headings:
-        about: ''
-        education: ''
-        interests: ''
-    
-    design:
-      # Clean background, closer to the style we want
-      background:
-        gradient_mesh:
-          enable: false
-
-      name:
-        size: md
-
-      avatar:
-        size: medium
-        shape: circle
 
   # Research statement
   - block: markdown
