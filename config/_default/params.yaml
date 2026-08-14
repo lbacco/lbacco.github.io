@@ -15,11 +15,12 @@ hugoblox:
   name: "Luca Bacco"
   organization: "Università Campus Bio-Medico di Roma"
   type: person
-  tagline: "Assistant Professor & AI Research Scientist"
-  description: "Personal academic website of Luca Bacco. Research in Natural Language Processing, Large Language Models, Multimodal Learning, Explainable AI, and Biomedical AI."
+  tagline: "AI Research Scientist"
+  description: "Personal website of Luca Bacco. Research in Natural Language Processing, Large Language Models, Multimodal Learning, Explainable AI, and Biomedical AI."
 
   social:
     twitter: "lbacco1"
+    linkedin: "lbacco"
 
   # ────────────────────────────────────────────────────────────────────────────
   # THEME
