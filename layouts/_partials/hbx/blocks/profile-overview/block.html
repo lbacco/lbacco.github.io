@@ -1,13 +1,18 @@
-{{ $block := . }}
+{{/* ========================================================
+     PROFILE OVERVIEW BLOCK
+     ======================================================== */}}
+
+{{ $block := .wcBlock }}
+{{ $content := $block.content }}
 
 <div class="profile-overview">
 
   <div class="profile-overview-grid">
 
 
-    <!-- =====================================================
+    {{/* ====================================================
          RESEARCH INTERESTS
-         ===================================================== -->
+         ==================================================== */}}
 
     <div class="profile-overview-column">
 
@@ -17,19 +22,19 @@
 
       <div class="research-interest-list">
 
-        {{ range $block.content.research_interests }}
+        {{ range $content.research_interests }}
 
-        <div class="research-interest-item">
+          <div class="research-interest-item">
 
-          <span class="research-interest-icon">
-            {{ .icon }}
-          </span>
+            <span class="research-interest-icon">
+              {{ .icon }}
+            </span>
 
-          <span class="research-interest-name">
-            {{ .name }}
-          </span>
+            <span class="research-interest-name">
+              {{ .name }}
+            </span>
 
-        </div>
+          </div>
 
         {{ end }}
 
@@ -38,59 +43,55 @@
     </div>
 
 
-    <!-- =====================================================
-         PREVIOUS EXPERIENCE
-         ===================================================== -->
+    {{/* ====================================================
+         EXPERIENCE
+         ==================================================== */}}
 
     <div class="profile-overview-column">
 
       <h2 class="profile-overview-title">
-        Previous Experience
+        Experience
       </h2>
 
       <div class="profile-timeline">
 
-        {{ range $block.content.experience }}
+        {{ range $content.experience }}
 
-        <div class="profile-timeline-item">
+          {{ $institution := .institution }}
 
-          <div class="profile-timeline-logo">
+          <div class="profile-timeline-item">
 
             {{ with .logo }}
-
-            <img
-              src="{{ . | relURL }}"
-              alt="{{ $.institution }}"
-              loading="lazy"
-            >
-
+              <div class="profile-timeline-logo">
+                <img
+                  src="{{ . | relURL }}"
+                  alt="{{ $institution }}"
+                  loading="lazy"
+                >
+              </div>
             {{ end }}
 
-          </div>
+            <div class="profile-timeline-content">
 
+              <div class="profile-timeline-header">
 
-          <div class="profile-timeline-content">
+                <span class="profile-timeline-institution">
+                  {{ .institution }}
+                </span>
 
-            <div class="profile-timeline-header">
+                <span class="profile-timeline-date">
+                  {{ .date }}
+                </span>
 
-              <span class="profile-timeline-institution">
-                {{ .institution }}
-              </span>
+              </div>
 
-              <span class="profile-timeline-date">
-                {{ .date }}
-              </span>
+              <div class="profile-timeline-role">
+                {{ .role }}
+              </div>
 
             </div>
 
-
-            <div class="profile-timeline-role">
-              {{ .role }}
-            </div>
-
           </div>
-
-        </div>
 
         {{ end }}
 
@@ -99,9 +100,9 @@
     </div>
 
 
-    <!-- =====================================================
+    {{/* ====================================================
          EDUCATION
-         ===================================================== -->
+         ==================================================== */}}
 
     <div class="profile-overview-column">
 
@@ -111,57 +112,52 @@
 
       <div class="profile-timeline">
 
-        {{ range $block.content.education }}
+        {{ range $content.education }}
 
-        <div class="profile-timeline-item">
+          {{ $institution := .institution }}
 
-          <div class="profile-timeline-logo">
+          <div class="profile-timeline-item">
 
             {{ with .logo }}
-
-            <img
-              src="{{ . | relURL }}"
-              alt="{{ $.institution }}"
-              loading="lazy"
-            >
-
+              <div class="profile-timeline-logo">
+                <img
+                  src="{{ . | relURL }}"
+                  alt="{{ $institution }}"
+                  loading="lazy"
+                >
+              </div>
             {{ end }}
 
-          </div>
+            <div class="profile-timeline-content">
 
+              <div class="profile-timeline-header">
 
-          <div class="profile-timeline-content">
+                <span class="profile-timeline-institution">
+                  {{ .institution }}
+                </span>
 
-            <div class="profile-timeline-header">
+                <span class="profile-timeline-date">
+                  {{ .date }}
+                </span>
 
-              <span class="profile-timeline-institution">
-                {{ .institution }}
-              </span>
+              </div>
 
-              <span class="profile-timeline-date">
-                {{ .date }}
-              </span>
+              <div class="profile-timeline-role">
+                {{ .degree }}
+              </div>
+
+              {{ with .thesis }}
+                <div class="profile-timeline-thesis">
+                  <span class="profile-timeline-thesis-label">
+                    Thesis:
+                  </span>
+                  {{ . }}
+                </div>
+              {{ end }}
 
             </div>
-
-
-            <div class="profile-timeline-role">
-              {{ .degree }}
-            </div>
-
-
-            {{ with .thesis }}
-
-            <div class="profile-timeline-thesis">
-              <span>Thesis:</span>
-              {{ . }}
-            </div>
-
-            {{ end }}
 
           </div>
-
-        </div>
 
         {{ end }}
 
