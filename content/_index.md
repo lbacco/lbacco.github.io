@@ -30,51 +30,64 @@ sections:
     design:
       columns: '1'
 
-
-  # Research statement
-  - block: markdown
+  # RESEARCH / EXPERIENCE / EDUCATION
+  # =========================================================
+  - block: profile-overview
+    id: profile-overview
     content:
-      title: 'Research'
-      subtitle: ''
-      text: |-
-        My research focuses on **Artificial Intelligence**, with particular
-        interests in **Natural Language Processing, Large Language Models,
-        multimodal learning, explainable AI, and biomedical applications**.
 
-        I am particularly interested in developing **reliable and data-efficient
-        machine learning methods for low-data and specialized-domain settings**,
-        and in understanding how modern AI models can be effectively adapted,
-        evaluated, and interpreted in interdisciplinary applications.
+      research_interests:
+        - name: 'NLP & Large Language Models'
+          icon: '◌'
 
-        My current research spans biomedical NLP and LLMs, multimodal learning,
-        physiological signals, computer vision, generative AI, and time-series
-        modelling.
-    design:
-      columns: '1'
+        - name: 'Explainable & Reliable AI'
+          icon: '⌕'
 
-  # Research themes
-  - block: markdown
-    content:
-      title: 'Research Interests'
-      subtitle: ''
-      text: |-
-        **Natural Language Processing & Large Language Models**  
-        Transformer-based language models, domain adaptation, fine-tuning,
-        representation learning, distillation, and retrieval-augmented generation.
+        - name: 'Biomedical & Multimodal AI'
+          icon: '◇'
 
-        **Biomedical & Multimodal AI**  
-        AI methods integrating text, images, physiological signals, and other
-        heterogeneous biomedical data.
+        - name: 'Data-efficient Learning'
+          icon: '∿'
 
-        **Explainable & Reliable AI**  
-        Interpretability, model behaviour, robustness, and reliability of
-        machine learning and deep learning systems.
 
-        **Data-efficient Learning**  
-        Machine learning approaches for specialized domains where annotated
-        data are limited or expensive to obtain.
-    design:
-      columns: '1'
+      experience:
+
+        - institution: 'Università Campus Bio-Medico di Roma'
+          role: 'Assistant Professor'
+          date: '09/2025 – present'
+          logo: 'logos/ucbm.png'
+
+        - institution: 'Università Campus Bio-Medico di Roma'
+          role: 'Postdoctoral Researcher'
+          date: '11/2022 – 08/2025'
+          logo: 'logos/ucbm.png'
+
+        - institution: 'University of Groningen'
+          role: 'Visiting PhD Student, Computational Linguistics'
+          date: '01/2022 - 07/2022'
+          logo: 'logos/groningen.png'
+
+        - institution: 'Università Campus Bio-Medico di Roma'
+          role: 'PhD Candidate'
+          date: '11/2019 – 10/2022'
+          logo: 'logos/ucbm.png'
+
+
+      education:
+
+        - institution: 'Università Campus Bio-Medico di Roma'
+          degree: 'PhD in Information Technology for Biomedicine'
+          date: '2023'
+          logo: 'images/logos/ucbm.png'
+          thesis: 'Exploring New Technologies in Healthcare: Advancing Natural Language Processing'
+
+        - institution: 'Università Campus Bio-Medico di Roma'
+          degree: 'MSc in Biomedical Engineering — 110/110 cum laude'
+          date: '2019'
+          logo: 'images/logos/ucbm.png'
+          thesis: 'Development of a motion control system for an anthropomorphic manipulator based on online extraction of muscle synergies'
+
+  # PUBLICATIONS
   - block: collection
     id: publications
     content:
@@ -91,7 +104,7 @@ sections:
     design:
       view: citation
 
-  # NEWS_BLOCK_START
+  # NEWS
   - block: collection
     id: news
     content:
@@ -113,6 +126,5 @@ sections:
       show_date: true
       show_read_time: false
       show_read_more: true
-  # NEWS_BLOCK_END
 
 ---
