@@ -8,14 +8,21 @@ main:
     url: /
     weight: 10
 
-  - name: Research
-    url: /#research
-    weight: 20
-
   - name: Publications
     url: /publications/
-    weight: 30
+    weight: 20
 
+  # CV dropdown
   - name: CV
+    identifier: cv
+    weight: 30
+    
+  - name: Short CV
+    parent: cv
     url: /uploads/resume.pdf
-    weight: 50
+    weight: 10
+
+  - name: Academic CV
+    parent: cv
+    url: /uploads/cv.pdf
+    weight: 20
