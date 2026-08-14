@@ -7,16 +7,18 @@
   --profile-sidebar-width: 245px;
   --profile-sidebar-left: 30px;
 
-  /* Altezza comune di sidebar e contenuto */
+  /* Posizione verticale comune:
+     sidebar e primo contenuto iniziano alla stessa altezza */
   --profile-top: 125px;
 
-  /* Posizione orizzontale del contenuto */
+  /* Il contenuto della pagina inizia a 380px
+     dal bordo sinistro della viewport */
   --profile-content-left: 380px;
 
-  /* Margine destro della pagina */
+  /* Spazio libero sul lato destro */
   --profile-content-right: 200px;
 
-  /* Mobile */
+  /* Mobile / tablet */
   --mobile-content-padding: 24px;
 }
 
@@ -39,7 +41,7 @@
 @media (min-width: 1100px) {
 
   /* =======================================================
-     LEFT SIDEBAR
+     LEFT PROFILE SIDEBAR
      ======================================================= */
 
   .global-profile-sidebar {
@@ -63,7 +65,7 @@
 
 
   /* =======================================================
-     AVATAR
+     PROFILE PHOTO
      ======================================================= */
 
   .global-profile-avatar {
@@ -80,7 +82,7 @@
 
 
   /* =======================================================
-     NAME
+     PROFILE NAME
      ======================================================= */
 
   .global-profile-name {
@@ -98,7 +100,7 @@
 
 
   /* =======================================================
-     ROLE
+     PROFILE ROLE
      ======================================================= */
 
   .global-profile-role {
@@ -111,7 +113,7 @@
 
 
   /* =======================================================
-     AFFILIATION
+     PROFILE AFFILIATION
      ======================================================= */
 
   .global-profile-affiliation {
@@ -125,7 +127,7 @@
 
 
   /* =======================================================
-     LOCATION
+     PROFILE LOCATION
      ======================================================= */
 
   .global-profile-location {
@@ -139,7 +141,7 @@
 
 
   /* =======================================================
-     SOCIAL LINKS
+     PROFILE SOCIAL ICONS
      ======================================================= */
 
   .global-profile-socials {
@@ -177,6 +179,7 @@
   .global-profile-socials a:hover {
     opacity: 1;
     transform: translateY(-2px);
+    text-decoration: none;
   }
 
   .global-profile-socials svg {
@@ -186,7 +189,7 @@
 
 
   /* =======================================================
-     TEXT LINKS
+     PROFILE TEXT LINKS
      ======================================================= */
 
   .global-profile-links a {
@@ -202,17 +205,17 @@
 
 
   /* =======================================================
-     MAIN PAGE CONTENT
+     GLOBAL PAGE CONTENT
 
-     IMPORTANT:
-     380px = horizontal shift from LEFT edge of viewport.
+     HugoBlox usa .page-body, NON <main>.
 
-     Content:
-     x = 380px
-     right margin = 200px
+     Sinistra: 380px
+     Destra:    200px
      ======================================================= */
 
-  main {
+  .page-body {
+    position: relative;
+
     margin-left: var(--profile-content-left) !important;
     margin-right: 0 !important;
 
@@ -230,51 +233,26 @@
 
 
   /* =======================================================
-     REMOVE HUGOBLOX WIDTH LIMITS
+     FIRST CONTENT VERTICAL ALIGNMENT
+
+     La navbar occupa circa --navbar-height.
+     Aggiungiamo solo la differenza necessaria affinché
+     il primo contenuto arrivi a --profile-top.
      ======================================================= */
 
-  main .container,
-  main .article-container,
-  main .page-body,
-  main .page-wrapper,
-  main .article-style,
-  main .prose,
-  main .max-w-prose,
-  main .max-w-xl,
-  main .max-w-2xl,
-  main .max-w-3xl,
-  main .max-w-4xl,
-  main .max-w-5xl,
-  main .max-w-6xl,
-  main .max-w-7xl,
-  main .max-w-screen-lg,
-  main .max-w-screen-xl,
-  main .max-w-screen-2xl {
-    width: 100% !important;
-    max-width: none !important;
+  .page-body {
+    padding-top: max(
+      0px,
+      calc(var(--profile-top) - var(--navbar-height, 75px))
+    ) !important;
   }
 
 
   /* =======================================================
-     REMOVE AUTOMATIC CENTERING
+     ALL HUGOBLOX SECTIONS
      ======================================================= */
 
-  main .container,
-  main .article-container,
-  main .page-body,
-  main .page-wrapper,
-  main .article-style {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-
-  /* =======================================================
-     HUGOBLOX SECTIONS
-     ======================================================= */
-
-  main section,
-  main .home-section {
+  .page-body > .hbb-section {
     width: 100% !important;
     max-width: none !important;
 
@@ -283,49 +261,95 @@
   }
 
 
-  main section > .container,
-  main .home-section > .container {
-    width: 100% !important;
-    max-width: none !important;
-
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-
-  /* =======================================================
-     FIRST CONTENT OF EVERY PAGE
-
-     Remove HugoBlox's extra spacing on the first block.
-     Sidebar and first page content should visually start
-     at the same level.
-     ======================================================= */
-
-  main > *:first-child {
-    margin-top: 0 !important;
-  }
-
-  main > section:first-child,
-  main > article:first-child,
-  main > div:first-child {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-
-  main > section:first-child .container,
-  main > section:first-child .max-w-prose,
-  main > section:first-child .prose {
+  /* Il primo blocco non deve aggiungere ulteriore
+     spazio sopra al contenuto */
+  .page-body > .hbb-section:first-child {
     margin-top: 0 !important;
     padding-top: 0 !important;
   }
 
 
   /* =======================================================
-     PROSE
+     HUGOBLOX SECTION CONTENT WRAPPER
+
+     Nel tuo HTML è questo:
+
+     <div class="
+       flex ...
+       max-w-prose
+       mx-auto
+       ...
+       px-6
+     ">
+
+     Questa regola funziona genericamente per i blocchi:
+     prende il contenuto che segue .home-section-bg.
      ======================================================= */
 
-  main .prose {
+  .page-body .hbb-section > .home-section-bg + * {
     width: 100% !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+
+  /* =======================================================
+     REMOVE HUGOBLOX / TAILWIND MAX WIDTHS
+     ======================================================= */
+
+  .page-body .container,
+  .page-body .article-container,
+  .page-body .article-style,
+  .page-body .prose,
+
+  .page-body .max-w-prose,
+  .page-body .max-w-xl,
+  .page-body .max-w-2xl,
+  .page-body .max-w-3xl,
+  .page-body .max-w-4xl,
+  .page-body .max-w-5xl,
+  .page-body .max-w-6xl,
+  .page-body .max-w-7xl,
+
+  .page-body .max-w-screen-lg,
+  .page-body .max-w-screen-xl,
+  .page-body .max-w-screen-2xl {
+    max-width: none !important;
+  }
+
+
+  /* =======================================================
+     REMOVE HORIZONTAL AUTO CENTERING
+     ======================================================= */
+
+  .page-body .container,
+  .page-body .article-container,
+  .page-body .article-style {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+
+  /* =======================================================
+     MARKDOWN CONTENT
+     ======================================================= */
+
+  .page-body .prose {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+
+  /* =======================================================
+     GENERIC SECTION WIDTH
+     ======================================================= */
+
+  .page-body section {
     max-width: none !important;
   }
 
@@ -334,15 +358,18 @@
      MEDIA
      ======================================================= */
 
-  main img,
-  main figure,
-  main table {
+  .page-body img,
+  .page-body figure,
+  .page-body table {
     max-width: 100%;
   }
 
 
   /* =======================================================
-     CUSTOM PUBLICATION PAGES
+     PUBLICATIONS / CUSTOM CONTENT
+
+     Nessun offset aggiuntivo: sono già dentro il layout
+     globale della pagina.
      ======================================================= */
 
   .pub-shell,
@@ -366,58 +393,49 @@
 
 @media (max-width: 1099px) {
 
+  /* Nascondi la sidebar desktop */
   .global-profile-sidebar {
     display: none;
   }
 
 
-  main {
+  /* Torna al normale layout mobile */
+  .page-body {
     width: 100% !important;
     max-width: 100% !important;
 
     margin-left: 0 !important;
     margin-right: 0 !important;
 
+    padding-top: 0 !important;
     padding-left: var(--mobile-content-padding) !important;
     padding-right: var(--mobile-content-padding) !important;
   }
 
 
-  main .container,
-  main .article-container,
-  main .page-body,
-  main .page-wrapper,
-  main .article-style,
-  main .prose,
-  main .max-w-prose,
-  main .max-w-xl,
-  main .max-w-2xl,
-  main .max-w-3xl,
-  main .max-w-4xl,
-  main .max-w-5xl,
-  main .max-w-6xl,
-  main .max-w-7xl,
-  main .max-w-screen-lg,
-  main .max-w-screen-xl,
-  main .max-w-screen-2xl {
-    width: 100% !important;
+  /* Manteniamo il comportamento responsive */
+  .page-body .container,
+  .page-body .article-container,
+  .page-body .article-style,
+  .page-body .prose,
+  .page-body .max-w-prose,
+  .page-body .max-w-xl,
+  .page-body .max-w-2xl,
+  .page-body .max-w-3xl,
+  .page-body .max-w-4xl,
+  .page-body .max-w-5xl,
+  .page-body .max-w-6xl,
+  .page-body .max-w-7xl,
+  .page-body .max-w-screen-lg,
+  .page-body .max-w-screen-xl,
+  .page-body .max-w-screen-2xl {
     max-width: 100% !important;
   }
 
 
-  main .container,
-  main .article-container,
-  main .page-body,
-  main .page-wrapper,
-  main .article-style {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-
-  main img,
-  main figure,
-  main table {
+  .page-body img,
+  .page-body figure,
+  .page-body table {
     max-width: 100%;
   }
 }
