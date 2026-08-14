@@ -1,40 +1,70 @@
 /* =========================================================
-   GLOBAL PROFILE SIDEBAR
+   GLOBAL SITE LAYOUT
    ========================================================= */
 
 :root {
+  /* Sidebar */
   --profile-sidebar-width: 245px;
   --profile-sidebar-left: 30px;
-  --profile-content-offset: 380px;
-  --profile-right-margin: 42px;
+
+  /* Altezza comune di sidebar e contenuto */
+  --profile-top: 125px;
+
+  /* Posizione orizzontale del contenuto */
+  --profile-content-left: 380px;
+
+  /* Margine destro della pagina */
+  --profile-content-right: 200px;
+
+  /* Mobile */
+  --mobile-content-padding: 24px;
 }
 
 
-/* Desktop */
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
 @media (min-width: 1100px) {
+
+  /* =======================================================
+     LEFT SIDEBAR
+     ======================================================= */
 
   .global-profile-sidebar {
     position: fixed;
 
-    /* sotto la navbar */
-    top: 105px;
-
-    /* molto vicina al margine sinistro */
+    top: var(--profile-top);
     left: var(--profile-sidebar-left);
 
     width: var(--profile-sidebar-width);
 
-    max-height: calc(100vh - 125px);
+    max-height: calc(100vh - var(--profile-top) - 20px);
     overflow-y: auto;
 
     z-index: 30;
 
     text-align: center;
-    padding-bottom: 2rem;
+
+    margin: 0;
+    padding: 0 0 2rem;
   }
 
 
-  /* FOTO */
+  /* =======================================================
+     AVATAR
+     ======================================================= */
 
   .global-profile-avatar {
     display: block;
@@ -49,7 +79,9 @@
   }
 
 
-  /* NOME */
+  /* =======================================================
+     NAME
+     ======================================================= */
 
   .global-profile-name {
     margin: 0 0 0.45rem;
@@ -65,19 +97,22 @@
   }
 
 
-  /* RUOLO */
+  /* =======================================================
+     ROLE
+     ======================================================= */
 
   .global-profile-role {
     margin: 0.35rem 0;
 
     font-size: 0.98rem;
     line-height: 1.45;
-
     font-weight: 600;
   }
 
 
-  /* AFFILIAZIONE */
+  /* =======================================================
+     AFFILIATION
+     ======================================================= */
 
   .global-profile-affiliation {
     margin: 0.45rem 0 0;
@@ -89,63 +124,76 @@
   }
 
 
-  /* LOCATION */
+  /* =======================================================
+     LOCATION
+     ======================================================= */
 
   .global-profile-location {
     margin: 0.25rem 0;
 
     font-size: 0.92rem;
+    line-height: 1.4;
 
     opacity: 0.7;
   }
 
 
-  /* LINK */
+  /* =======================================================
+     SOCIAL LINKS
+     ======================================================= */
 
   .global-profile-socials {
-  margin-top: 1.25rem;
+    margin-top: 1.25rem;
 
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 
-  gap: 0.8rem;
-}
+    justify-content: center;
+    align-items: center;
 
-.global-profile-socials a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+    gap: 0.8rem;
+  }
 
-  width: 30px;
-  height: 30px;
+  .global-profile-socials a {
+    display: inline-flex;
 
-  color: inherit;
-  text-decoration: none;
+    align-items: center;
+    justify-content: center;
 
-  opacity: 0.82;
+    width: 30px;
+    height: 30px;
 
-  transition:
-    opacity 0.15s ease,
-    transform 0.15s ease;
-}
+    color: inherit;
+    text-decoration: none;
 
-.global-profile-socials a:hover {
-  opacity: 1;
-  transform: translateY(-2px);
-  text-decoration: none;
-}
+    opacity: 0.82;
 
-.global-profile-socials svg {
-  width: 23px;
-  height: 23px;
-}
+    transition:
+      opacity 0.15s ease,
+      transform 0.15s ease;
+  }
+
+  .global-profile-socials a:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+
+  .global-profile-socials svg {
+    width: 23px;
+    height: 23px;
+  }
+
+
+  /* =======================================================
+     TEXT LINKS
+     ======================================================= */
 
   .global-profile-links a {
-    text-decoration: none;
-    font-weight: 600;
     font-size: 0.93rem;
+    font-weight: 600;
+
+    text-decoration: none;
   }
 
   .global-profile-links a:hover {
@@ -153,50 +201,161 @@
   }
 
 
-  /* =====================================================
-     MOVE ALL SITE CONTENT TO THE RIGHT OF THE SIDEBAR
-     ===================================================== */
+  /* =======================================================
+     MAIN PAGE CONTENT
+
+     IMPORTANT:
+     380px = horizontal shift from LEFT edge of viewport.
+
+     Content:
+     x = 380px
+     right margin = 200px
+     ======================================================= */
 
   main {
-    margin-left: var(--profile-content-offset) !important;
+    margin-left: var(--profile-content-left) !important;
+    margin-right: 0 !important;
 
     width: calc(
-      100% - var(--profile-content-offset)
+      100vw
+      - var(--profile-content-left)
+      - var(--profile-content-right)
     ) !important;
+
+    max-width: none !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
 
-  /* =====================================================
-     WIDEN HUGOBLOX CONTENT
-     ===================================================== */
+  /* =======================================================
+     REMOVE HUGOBLOX WIDTH LIMITS
+     ======================================================= */
 
   main .container,
   main .article-container,
   main .page-body,
+  main .page-wrapper,
+  main .article-style,
+  main .prose,
   main .max-w-prose,
+  main .max-w-xl,
+  main .max-w-2xl,
   main .max-w-3xl,
   main .max-w-4xl,
   main .max-w-5xl,
   main .max-w-6xl,
   main .max-w-7xl,
-  main .max-w-screen-xl {
+  main .max-w-screen-lg,
+  main .max-w-screen-xl,
+  main .max-w-screen-2xl {
+    width: 100% !important;
     max-width: none !important;
   }
 
 
+  /* =======================================================
+     REMOVE AUTOMATIC CENTERING
+     ======================================================= */
+
   main .container,
   main .article-container,
-  main .page-body {
-    width: calc(100% - var(--profile-right-margin)) !important;
-
+  main .page-body,
+  main .page-wrapper,
+  main .article-style {
     margin-left: 0 !important;
-    margin-right: var(--profile-right-margin) !important;
+    margin-right: 0 !important;
   }
 
 
-  /* Markdown/prose pages are otherwise intentionally narrow */
+  /* =======================================================
+     HUGOBLOX SECTIONS
+     ======================================================= */
+
+  main section,
+  main .home-section {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+
+  main section > .container,
+  main .home-section > .container {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+
+  /* =======================================================
+     FIRST CONTENT OF EVERY PAGE
+
+     Remove HugoBlox's extra spacing on the first block.
+     Sidebar and first page content should visually start
+     at the same level.
+     ======================================================= */
+
+  main > *:first-child {
+    margin-top: 0 !important;
+  }
+
+  main > section:first-child,
+  main > article:first-child,
+  main > div:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  main > section:first-child .container,
+  main > section:first-child .max-w-prose,
+  main > section:first-child .prose {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+
+  /* =======================================================
+     PROSE
+     ======================================================= */
+
   main .prose {
-    max-width: 100% !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+
+  /* =======================================================
+     MEDIA
+     ======================================================= */
+
+  main img,
+  main figure,
+  main table {
+    max-width: 100%;
+  }
+
+
+  /* =======================================================
+     CUSTOM PUBLICATION PAGES
+     ======================================================= */
+
+  .pub-shell,
+  .pub-main,
+  .pub-item,
+  .pub-intro {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .pub-shell {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
 
@@ -211,43 +370,54 @@
     display: none;
   }
 
+
   main {
+    width: 100% !important;
+    max-width: 100% !important;
+
     margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: var(--mobile-content-padding) !important;
+    padding-right: var(--mobile-content-padding) !important;
+  }
+
+
+  main .container,
+  main .article-container,
+  main .page-body,
+  main .page-wrapper,
+  main .article-style,
+  main .prose,
+  main .max-w-prose,
+  main .max-w-xl,
+  main .max-w-2xl,
+  main .max-w-3xl,
+  main .max-w-4xl,
+  main .max-w-5xl,
+  main .max-w-6xl,
+  main .max-w-7xl,
+  main .max-w-screen-lg,
+  main .max-w-screen-xl,
+  main .max-w-screen-2xl {
     width: 100% !important;
-  }
-}
-
-/* =========================================================
-   FIX CUSTOM PUBLICATIONS PAGE
-   ========================================================= */
-
-@media (min-width: 1100px) {
-
-  .pub-shell {
-    margin-left: var(--profile-content-offset) !important;
-    margin-right: var(--profile-right-margin) !important;
-
-    width: calc(
-      100vw
-      - var(--profile-content-offset)
-      - var(--profile-right-margin)
-    ) !important;
-
-    max-width: none !important;
+    max-width: 100% !important;
   }
 
-  .pub-main {
-    width: 100% !important;
-    max-width: none !important;
-    min-width: 0;
+
+  main .container,
+  main .article-container,
+  main .page-body,
+  main .page-wrapper,
+  main .article-style {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
-  .pub-item {
-    width: 100% !important;
-    max-width: none !important;
-  }
 
-  .pub-intro {
-    max-width: none !important;
+  main img,
+  main figure,
+  main table {
+    max-width: 100%;
   }
 }
