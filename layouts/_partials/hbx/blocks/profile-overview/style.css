@@ -1,0 +1,290 @@
+/* =========================================================
+   PROFILE OVERVIEW
+   Research Interests / Experience / Education
+   ========================================================= */
+
+.profile-overview {
+  width: 100%;
+  max-width: none;
+}
+
+
+/* =========================================================
+   THREE COLUMN GRID
+   ========================================================= */
+
+.profile-overview-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1.15fr)
+    minmax(0, 1.15fr);
+
+  gap: 32px;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   COLUMN
+   ========================================================= */
+
+.profile-overview-column {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   COLUMN TITLES
+   ========================================================= */
+
+.profile-overview-title {
+  margin: 0;
+  padding: 0 0 12px;
+
+  border-bottom: 1px solid
+    color-mix(in srgb, currentColor 20%, transparent);
+
+  font-size: 1.05rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   RESEARCH INTERESTS
+   ========================================================= */
+
+.research-interest-list {
+  width: 100%;
+}
+
+
+.research-interest-item {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  min-height: 54px;
+
+  padding: 11px 0;
+
+  border-bottom: 1px solid
+    color-mix(in srgb, currentColor 15%, transparent);
+}
+
+
+.research-interest-icon {
+  display: inline-flex;
+
+  flex: 0 0 20px;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.05rem;
+
+  color: var(--color-primary-500, #7186ff);
+}
+
+
+.research-interest-name {
+  font-size: 0.93rem;
+  line-height: 1.35;
+
+  opacity: 0.82;
+}
+
+
+/* =========================================================
+   EXPERIENCE / EDUCATION
+   ========================================================= */
+
+.profile-timeline {
+  width: 100%;
+}
+
+
+.profile-timeline-item {
+  display: flex;
+
+  gap: 12px;
+
+  width: 100%;
+
+  padding: 15px 0;
+
+  border-bottom: 1px solid
+    color-mix(in srgb, currentColor 15%, transparent);
+}
+
+
+/* =========================================================
+   LOGOS
+   ========================================================= */
+
+.profile-timeline-logo {
+  display: flex;
+
+  flex: 0 0 30px;
+
+  width: 30px;
+  height: 30px;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 5px;
+
+  background: #fff;
+}
+
+
+.profile-timeline-logo img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 2px;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   TIMELINE CONTENT
+   ========================================================= */
+
+.profile-timeline-content {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.profile-timeline-header {
+  display: flex;
+
+  align-items: baseline;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  width: 100%;
+}
+
+
+.profile-timeline-institution {
+  min-width: 0;
+
+  font-size: 0.91rem;
+  line-height: 1.3;
+  font-weight: 650;
+
+  color: var(--color-primary-500, #7186ff);
+}
+
+
+.profile-timeline-date {
+  flex-shrink: 0;
+
+  white-space: nowrap;
+
+  font-size: 0.69rem;
+  line-height: 1.3;
+
+  opacity: 0.65;
+}
+
+
+.profile-timeline-role {
+  margin-top: 3px;
+
+  font-size: 0.86rem;
+  line-height: 1.35;
+
+  opacity: 0.74;
+}
+
+
+.profile-timeline-thesis {
+  margin-top: 4px;
+
+  font-size: 0.72rem;
+  line-height: 1.4;
+
+  opacity: 0.75;
+}
+
+
+.profile-timeline-thesis span {
+  color: inherit;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+.dark .research-interest-icon,
+.dark .profile-timeline-institution {
+  color: var(--color-primary-300, #9aa8ff);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1250px) {
+
+  .profile-overview-grid {
+    gap: 22px;
+  }
+
+  .profile-timeline-header {
+    flex-wrap: wrap;
+  }
+
+}
+
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+
+  .profile-overview-grid {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 32px;
+  }
+
+  .profile-overview-column:first-child {
+    grid-column: 1 / -1;
+  }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  .profile-overview-grid {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .profile-overview-column:first-child {
+    grid-column: auto;
+  }
+
+}
